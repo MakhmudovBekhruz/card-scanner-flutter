@@ -80,6 +80,12 @@ abstract class CardHolderNameConstants {
                     "valid from valid thru",
                     "valid from valid till",
                     "member since",
+                    "humo",
+                    "HUMO",
+                    "uzcard",
+                    "UZCARD",
+                    "MULTICARD",
+                    "OrientFinanceBank",
                     "prepaid")
   };
 }
