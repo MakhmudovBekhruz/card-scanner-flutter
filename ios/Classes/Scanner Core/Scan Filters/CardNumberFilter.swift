@@ -22,7 +22,7 @@ class CardNumberFilter: ScanFilter {
     func filter() -> ScanFilterResult? {
         for (blockIndex, block) in visionText.blocks.enumerated() {
             for (_, line) in block.lines.enumerated() {
-                let sanitizedBlockText = line.text.sanitized
+                var sanitizedBlockText = line.text.sanitized
                 sanitizedBlockText = sanitizedBlockText.replace(".", "" )
                 sanitizedBlockText = sanitizedBlockText.replace("I", "1")
                 sanitizedBlockText = sanitizedBlockText.replace("i", "1")
