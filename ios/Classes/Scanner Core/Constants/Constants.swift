@@ -82,6 +82,12 @@ struct CardHolderNameConstants {
             "valid from valid till",
             "member since",
             "prepaid",
+            "humo",
+            "HUMO",
+            "uzcard",
+            "UZCARD",
+            "MULTICARD",
+            "OrientFinanceBank",
             "HSBC UK".lowercased(),
             "HSBC".lowercased()
         ]
