@@ -127,13 +127,6 @@ extension String {
         return ((self as NSString).substring(to: count >= 16 ? 16 : count) as String)
     }
 }
-extension String
-{
-    func replace(target: String, withString: String) -> String
-    {
-       return self.replacingOccurrences(target, withString: withString)
-    }
-}
 
 
 extension Dictionary where Key == String, Value == Int {
