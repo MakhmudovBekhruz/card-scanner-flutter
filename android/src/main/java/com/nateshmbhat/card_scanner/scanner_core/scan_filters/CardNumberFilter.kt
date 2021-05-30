@@ -24,8 +24,25 @@ class CardNumberFilter(visionText: Text, scannerOptions: CardScannerOptions) : S
 
   override fun filter(): CardNumberScanResult? {
     for ((index, block) in visionText.textBlocks.withIndex()) {
-      if (cardNumberRegex.containsMatchIn(block.text)) {
-        val cardNumber = cardNumberRegex.find(block.text)!!.value.trim().replace(Regex("\\s+"), "")
+      val text = block.text
+      text.replace(".", "" );
+      text.replace("I", "1");
+      text.replace("i", "1");
+      text.replace("l", "1");
+      text.replace("L", "1");
+      text.replace("b", "6");
+      text.replace("B", "8");
+      text.replace("Q", "4");
+      text.replace("T", "7");
+      text.replace("q", "9");
+      text.replace("(", "0");
+      text.replace(")", "0");
+      text.replace("h", "6");
+      text.replace("C", "0");
+      text.replace("c", "0");
+      text.replace("E", "8");
+      if (cardNumberRegex.containsMatchIn(text)) {
+        val cardNumber = cardNumberRegex.find(text)!!.value.trim().replace(Regex("\\s+"), "")
         if (!_isValidCardNumber(cardNumber)) continue;
         debugLog("card number = $cardNumber", scannerOptions);
         if (scannerOptions.enableLuhnCheck && !checkLuhnAlgorithm(cardNumber)) {
