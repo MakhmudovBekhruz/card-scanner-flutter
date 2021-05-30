@@ -23,6 +23,8 @@ class CardNumberFilter: ScanFilter {
         for (blockIndex, block) in visionText.blocks.enumerated() {
             for (_, line) in block.lines.enumerated() {
                 var sanitizedBlockText = line.text.sanitized
+
+                debugLog("Sanitized Card Number before correction: \(sanitizedBlockText)", scannerOptions: scannerOptions)
                 sanitizedBlockText = sanitizedBlockText.replacingOccurrences(of : ".", with : "")
                 sanitizedBlockText = sanitizedBlockText.replacingOccurrences(of : "I", with :"1")
                 sanitizedBlockText = sanitizedBlockText.replacingOccurrences(of : "i", with :"1")
@@ -39,7 +41,7 @@ class CardNumberFilter: ScanFilter {
                 sanitizedBlockText = sanitizedBlockText.replacingOccurrences(of : "C", with :"0")
                 sanitizedBlockText = sanitizedBlockText.replacingOccurrences(of : "c", with :"0")
                 sanitizedBlockText = sanitizedBlockText.replacingOccurrences(of : "E", with :"8")
-                debugLog("Sanitized Card Number : \(sanitizedBlockText)", scannerOptions: scannerOptions)
+                debugLog("Sanitized Card Number after correction: \(sanitizedBlockText)", scannerOptions: scannerOptions)
                 
                 if let firstMatch = cardNumberRegex.firstMatch(
                     in: sanitizedBlockText,
