@@ -19,7 +19,6 @@ A new Flutter plugin.
   s.dependency 'Flutter'
   s.dependency 'GoogleMLKit/TextRecognition'
   s.dependency 'Firebase/CoreOnly', '~> 8.0.0'
-  s.dependency 'GoogleDataTransport', '~> 9.0.0'
   s.platform = :ios, '11.0'
   s.static_framework = true
 
