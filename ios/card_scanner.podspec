@@ -20,7 +20,6 @@ A new Flutter plugin.
   s.dependency 'GoogleMLKit/TextRecognition'
   s.dependency 'Firebase/CoreOnly', '~> 8.0.0'
   s.dependency 'GoogleDataTransport', '~> 9.0'
-  s.dependency 'GoogleMLKit', '~> 0.64.2'
   s.platform = :ios, '11.0'
   s.static_framework = true
 
